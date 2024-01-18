@@ -1,0 +1,54 @@
+{% extends "publication/home.html" %}
+{% load static %}
+
+{% block head %}
+<head>
+    <link type="text/css" href="{% static 'publication/css/styles.css' %}" rel="stylesheet" />
+    <link type="text/css" href="{% static 'person/css/styles.css' %}" rel="stylesheet" />
+    <script src="{% static 'publication/js/script.js' %}"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% endblock head %}
+
+{% block content %}
+    <div id="name_notes_view"> My Notes</div>
+    <a href="{% url 'add_notes' %}" id="add_note_in_database"> <div > Add Note</div> </a>
+
+    <div id="name_of_note"> Name </div>
+    <div id="time_create_of_note"> Time create </div>
+    <div id="text_of_note"> Description </div>
+
+    <div class="view_notes_all">
+    {% for my_notes in user_notes%}
+
+        <a href={% url 'view_note' number=my_notes.pk name=my_notes.topic|slugify  %} id="reference_of_note">
+        <div class="one_of_notes">
+
+            <div id="name_of_note_text"> {{my_notes.topic|truncatechars:12}} </div>
+
+
+            <div id="time_create_of_note_text"> {{my_notes.time_create}} </div>
+
+            <div id="text_of_note_text"> {{my_notes.text|truncatechars:59}} </div>
+
+        </div>
+            </a>
+    {% endfor %}
+    </div>
+
+    <a href={% url 'filter_my_notes' filter='first_new' %}>
+    <button type="submit"   title="First the new!" class="place_filter_up_note" >
+         <img src="/media/filter_up.png" class="filter_photo_note">
+    </button>
+    </a>
+
+    <a href={% url 'filter_my_notes' filter='first_old' %}>
+     <button type="submit" title="First the old!" class="place_filter_low_note" >
+         <img src="/media/filter_low.png" class="filter_photo_note">
+    </button>
+    </a>
+
+{% endblock content %}
+
+<div style="position: relative; top: 500px; left: 500px;">

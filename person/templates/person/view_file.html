@@ -1,0 +1,65 @@
+{% extends "publication/home.html" %}
+{% load static %}
+{% load filename %}
+
+{% block head %}
+<head>
+    <link type="text/css" href="{% static 'publication/css/styles.css' %}" rel="stylesheet" />
+    <link type="text/css" href="{% static 'person/css/styles.css' %}" rel="stylesheet" />
+    <script src="{% static 'publication/js/script.js' %}"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% endblock head %}
+
+{% block content %}
+    <form method="post" id="form_view_note">
+    {% csrf_token %}
+
+<div>{{ form.non_field_errors }}</div>
+    <p class="text_auto">View File</p>
+    <hr>
+<div class="place_to_filed"> </div>
+{% for f in form %}
+<div class="field_in_form_add_note">{{ f }}</div>
+<div class="form-error">{{ f.errors }}</div>
+{% endfor %}
+
+
+    <button type="submit" class="submit_input" >
+        <div class="text_log_in">Save</div>
+    </button>
+
+        {% for e in current_file %}
+     <a href="{% url 'delete_file' e.uuid %}" class="delete_file"> Delete file</a>
+        {%endfor%}
+
+
+</form>
+
+    {% for e in current_file%}
+
+        {% if  e.files|extension == "png" or e.files|extension == "jpg" or e.files|extension == "jpeg"%}
+     <img src="{{e.files.url }}" class="view_only_file">
+
+        {% elif e.files|check_on_video %}
+            <video controls="controls" src="{{e.files.url }}" class="view_only_video"> </video>
+            <p>tetetet</p>
+
+
+        {% elif e.files|check_on_video %}
+            <video controls="controls" src="{{e.files.url }}" class="view_only_video"> </video>
+            <p>tetetet</p>
+
+        <object data= "{{e.files.url }}" width="500" height="300">
+        </object>
+
+          {% else %}
+
+        {% endif %}
+
+
+    {% endfor %}
+
+
+{% endblock content %}

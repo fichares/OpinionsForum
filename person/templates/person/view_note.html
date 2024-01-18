@@ -1,0 +1,37 @@
+{% extends "publication/home.html" %}
+{% load static %}
+
+{% block head %}
+<head>
+    <link type="text/css" href="{% static 'publication/css/styles.css' %}" rel="stylesheet" />
+    <link type="text/css" href="{% static 'person/css/styles.css' %}" rel="stylesheet" />
+    <script src="{% static 'publication/js/script.js' %}"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% endblock head %}
+
+{% block content %}
+    <form method="post" id="form_add_note">
+    {% csrf_token %}
+
+<div>{{ form.non_field_errors }}</div>
+    <p class="text_auto">View Note</p>
+    <hr>
+<div class="place_to_filed"> </div>
+{% for f in form %}
+<div class="field_in_form_add_note">{{ f }}</div>
+<div class="form-error">{{ f.errors }}</div>
+{% endfor %}
+
+
+    <button type="submit" class="submit_input" >
+        <div class="text_log_in">Save</div>
+    </button>
+
+        {% for e in object %}
+    <a href="{% url 'delete_note' e.pk %}" class="delete_note"> Delete note</a>
+        {%endfor%}
+
+</form>
+{% endblock content %}

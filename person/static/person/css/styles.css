@@ -1,0 +1,212 @@
+.view_notes_all{
+    position: relative;
+    top: 265px;
+    left: 400px;
+}
+
+#name_notes_view{
+    position: absolute;
+    top: 140px;
+    left: 47%;
+    font-size: 26px;
+    letter-spacing: 1px;
+    text-decoration: underline;
+}
+
+#name_notes_view:hover{
+ text-decoration: none;
+
+}
+
+#reference_of_note{
+    color: black;
+    text-decoration: none;
+    display: block;
+    width: 680px;
+    height: 100px;
+}
+
+.one_of_notes{
+    font-size: 18px;
+    border: solid black;
+    display: block;
+    width: 900px;
+    height: 40px;
+    margin-top: -50px;
+
+}
+
+#name_of_note{
+    position: absolute;
+    top: 185px;
+    left: 412px;
+    font-size: 22px;
+}
+
+#time_create_of_note{
+    position: absolute;
+    top: 185px;
+    left: 560px;
+    font-size: 22px;
+}
+
+#text_of_note{
+    position: absolute;
+    top: 185px;
+    left: 710px;
+    font-size: 22px;
+}
+
+#time_create_of_note_text{
+    width: 300px;
+    position: relative;
+    top: -19px;
+    left: 160px;
+    font-size: 22px;
+}
+
+#name_of_note_text{
+    position: relative;
+    top: 5px;
+    left: 4px;
+    font-size: 22px;
+}
+
+#text_of_note_text{
+    width: 450px;
+    position: relative;
+    top: -47px;
+    left: 300px;
+    font-size: 22px;
+}
+
+.filter_photo_note{
+    position: relative;
+    left: -3px;
+    width: 10px;
+    height: 10px;
+}
+
+.place_filter_up_note{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 180px;
+    left: 670px;
+}
+
+
+.place_filter_low_note{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 200px;
+    left: 670px;
+}
+
+#add_note_in_database{
+    position: absolute;
+    top: 140px;
+    left: 88%;
+    color: black;
+    text-decoration: underline;
+    font-size: 23px;
+}
+
+#add_note_in_database:hover {
+    text-decoration: none;
+}
+
+#form_add_note{
+    position:absolute;
+    top: 330px;
+    left: 700px;
+    background-color: black;
+    height: 350px;
+    width: 700px;
+    text-align: center;
+}
+
+.field_in_form_add_note{
+    color:white;
+    position:relative;
+    left: 0px;
+    margin-top:30px;
+}
+
+.note_add_db{
+
+}
+
+.delete_note{
+    text-decoration: none;
+    color: white;
+
+    position: relative;
+    left: 235px;
+    top: 35px;
+    font-size: 18px;
+}
+
+.delete_note:hover{
+    text-decoration: underline;
+}
+
+#format_files_in_myfile{
+    position: relative;
+    top: -19px;
+    left: 300px;
+    font-size: 22px;
+
+}
+
+.view_only_file{
+    position: absolute;
+    top: 28%;
+    left: 55%;
+    width: 20%;
+    height: auto;
+}
+
+#form_view_note{
+    position:absolute;
+    top: 300px;
+    left: 400px;
+    background-color: black;
+    height: 350px;
+    width: 380px;
+    text-align: center;
+}
+
+
+.delete_file{
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    left: 288px;
+    top: 315px;
+    font-size: 18px;
+}
+
+.delete_file:hover{
+    text-decoration: underline;
+}
+
+#form_view_file{
+    position:absolute;
+    top: 300px;
+    left: 400px;
+    background-color: black;
+    height: 350px;
+    width: 380px;
+    text-align: center;
+}
+
+.view_only_video{
+    position: absolute;
+    top: 31%;
+    left: 55%;
+    width: 25%;
+    height: auto;
+    controls: controls;
+}

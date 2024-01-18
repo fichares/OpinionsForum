@@ -1,0 +1,20 @@
+{% extends "publication/home_no_auto.html" %}
+
+ {%block title%}  <title>Register</title> {%endblock title%}
+
+{%block content%}
+    <h1>Register</h1>
+
+<form method="post" id="form_register">
+    {% csrf_token %}
+    <p class="text_auto">Register</p>
+    <hr>
+
+{% for f in form %}
+<p>{{ f }}</p>
+<div class="form-error">{{ f.errors }}</div>
+{% endfor %}
+
+    <button type="submit" class="register_input" >Регистрация</button>
+</form>
+{%endblock content%}

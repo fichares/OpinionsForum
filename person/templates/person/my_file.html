@@ -1,0 +1,38 @@
+{% extends "publication/home.html" %}
+{% load static %}
+{% load filename %}
+
+{% block head %}
+<head>
+    <link type="text/css" href="{% static 'publication/css/styles.css' %}" rel="stylesheet" />
+    <link type="text/css" href="{% static 'person/css/styles.css' %}" rel="stylesheet" />
+    <script src="{% static 'publication/js/script.js' %}"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% endblock head %}
+
+{% block content %}
+    <div id="name_notes_view"> My Files</div>
+    <a href="{% url 'add_file' %}" id="add_note_in_database"> <div > Add File</div> </a>
+
+    <div id="name_of_note"> Name </div>
+    <div id="text_of_note"> Description file</div>
+
+    <div class="view_notes_all">
+    {% for my_files in user_files%}
+
+        <a href={% url 'file_view' uuid=my_files.uuid name=my_files.name  %} id="reference_of_note">
+        <div class="one_of_notes">
+
+            <div id="name_of_note_text"> {{my_files.name|truncatechars:12}} </div>
+            <div id="format_files_in_myfile"> {{my_files.files|filename}} </div>
+
+        </div>
+            </a>
+    {% endfor %}
+    </div>
+
+
+
+{% endblock content %}

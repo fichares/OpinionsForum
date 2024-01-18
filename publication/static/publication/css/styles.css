@@ -1,0 +1,347 @@
+.home_up_panel{
+    block: display;
+    weight: 110%;
+    height: 70px;
+    background-color: black;
+    margin: -8px;
+
+}
+
+.hello_friend{
+    position: absolute;
+    left:760px;
+    top:20px;
+    color: white;
+    font-size: 24px;
+    letter-spacing: 3px;
+}
+
+.text_main_panel{
+    color: white;
+    text-decoration: none;
+}
+
+.home_main_panel{
+    position: absolute;
+    left:88%;
+    font-size: 24px;
+    top:20px;
+    letter-spacing: 1px;
+    -webkit-transition: all 1s ease;
+          transition: all 1s ease;
+}
+
+.text_main_panel:hover{
+    text-color: black;
+    text-decoration: underline;
+   }
+
+.phon_no_home{
+    position:absolute;
+    top: 70px;
+    left: -10px;
+    height: 1000px;
+    width: 1793px;
+
+}
+
+.text_phon_no_home{
+    position:absolute;
+    top: 160px;
+    left: 37%;
+    color: white;
+    font-size: 28px;
+}
+
+#form_login{
+    position:absolute;
+    top: 330px;
+    left: 700px;
+    background-color: black;
+    height: 285px;
+    width: 300px;
+    text-align: center;
+}
+
+.text_in_form{
+    position: relative;
+    top: 30px;
+    left:4px;
+}
+
+.text_auto{
+    color: white;
+    text-align: center;
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+.submit_input{
+    position: relative;
+    top: 35px;
+    weight:50%;
+    width: 90px;
+    height: 35px;
+}
+
+.text_log_in{
+    font-size: 14px;
+}
+
+#form_register{
+    position:absolute;
+    top: 330px;
+    left: 700px;
+    background-color: black;
+    height: 320px;
+    width: 330px;
+    text-align: center;
+}
+
+.register_input{
+    position:relative;
+    top: 20px;
+    height: 30px;
+    width: 150px;
+}
+
+.up_panel_home{
+    position: absolute;
+    left: 10%;
+    top:-7px;
+    display: block;
+    width:90%;
+    height:100px;
+    background-color: black;
+}
+
+.left_panel_home{
+    position: absolute;
+    left: 0px;
+    top:0px;
+    display: block;
+    width:10%;
+    height:100%;
+    background-color: black;
+}
+.photo_with_username{
+    position: absolute;
+    left: 0px;
+    top:0px;
+    display: block;
+    width:99%;
+    height:92px;
+    border: 1px solid white;
+}
+
+.ref_photo_with_username :hover{
+   transform: scale(0.9);
+}
+
+.photo_user_in_home{
+    position: relative;
+    left: 7px;
+    top: 7px;
+    width: 70px;
+    height: 70px;
+}
+
+.name_user_in_home{
+    position: relative;
+    left: 95px;
+    top: -70px;
+    font-size: 24px;
+    width:40px;
+    color: white;
+}
+
+.notes_at_home{
+    position: relative;
+    left: 0px;
+    top: 94px;
+}
+
+.photo_notes{
+    width: 180px;
+    height: 70px;
+}
+
+.chats_at_home{
+    position: relative;
+    left: 0px;
+    top: 91px;
+}
+
+.photo_notes{
+
+}
+
+.myfile_at_home{
+    position: relative;
+    left: 0px;
+    top: 88px;
+}
+
+.logout_home{
+    position: absolute;
+    left: 94%;
+    top: 35px;
+    color: white;
+    text-decoration: none;
+    font-size: 26px;
+}
+
+ .container {
+      width: 25rem;
+      height: 100%;
+      margin: 0 1rem;
+      position: relative;
+      top: -30px;
+      left: 14%;
+      }
+
+      .searchbar {
+      font-size: 2.4rem;
+      width: 21rem;
+      height: 0.06rem;
+      border: none;
+      outline: none;
+      border-radius: 10rem;
+      padding: 2rem;
+      transition: all .1s;
+      transition-delay: .1s;
+      }
+      .searchbar:hover {
+      width: 22rem;
+      height: 0.3rem;
+      }
+      .button {
+      height: 2rem;
+      position: absolute;
+      top: 1.3rem;
+      right: 1rem;
+      transition: all .1s;
+      transition-delay: .1s;
+      }
+      .button:hover {
+      cursor: pointer;
+      }
+      .searchbar:hover + .button {
+      height: 2.5rem;
+      top: 1.4rem;
+      right: 0;
+      }
+      .searchbar::placeholder {
+      opacity: .3;
+      }
+
+
+.ref_push_user: hover{
+   transform: scale(0.9);
+}
+
+.photo_person{
+    width: 50px;
+    height:50px;
+}
+
+.push_home{
+    position: relative;
+    top: 25px;
+    left:15px;
+}
+
+
+
+.push_ref_now:hover{
+    -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.name_base_chat{
+
+    position: absolute;
+    top: 12%;
+    left: 45%;
+    font-size: 25px;
+}
+
+.block_chat_of_page{
+    overflow-x: hidden;
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    height: 650px;
+    width: 940px;
+    border: 1px solid black;
+}
+
+.wrapper_Scrollbottom{
+}
+
+.photo_user_message{
+    position: relative;
+    left: 25px;
+    width:55px;
+    height:55px;
+}
+
+.view_message_in_block{
+}
+
+.name_and_time_in_message{
+    position: relative;
+    left: 100px;
+    top: -64px;
+    display: flex;
+    flex-direction: row;
+}
+
+.view_users_in_message{
+
+    font-size: 20px;
+}
+
+.view_time_in_message{
+
+    font-size: 12px;
+    color: grey;
+    margin-top: 6px;
+    margin-left: 12px;
+    display: inline;
+}
+
+.view_mess_in_block{
+    block:display;
+    position:relative;
+    margin-top:-70px;
+    margin-left: 99px;
+    margin-right: 30px;
+
+}
+
+.enter_message_in_chat{
+    position: absolute;
+    top: 82%;
+    left: 25%;
+}
+
+.pole_input_message{
+    position: absolute;
+    top: 15px;
+    left: 0px;
+    width: 100px;
+}
+
+.submit_input_message{
+    position: absolute;
+    top: 16px;
+    left: 750px;
+
+}
+
+
+
+
+
+

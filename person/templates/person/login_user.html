@@ -1,0 +1,28 @@
+{% extends "publication/home_no_auto.html" %}
+
+ {%block title%}  <title>Login</title> {%endblock title%}
+
+{%block content%}
+
+<h1 id="login_show">Login</h1>
+
+<form method="post" id="form_login">
+    {% csrf_token %}
+
+<div>{{ form.non_field_errors }}</div>
+    <p class="text_auto">Authorization</p>
+    <hr>
+<div class="text_in_form">
+{% for f in form %}
+<p style="color:white;">{{ f }}</p>
+<div class="form-error">{{ f.errors }}</div>
+{% endfor %}
+
+</div>
+    <button type="submit" class="submit_input" >
+        <div class="text_log_in">Log in</div>
+    </button>
+</form>
+
+<p style="color:white">aaa</p>
+{%endblock content%}

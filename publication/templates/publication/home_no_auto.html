@@ -1,0 +1,41 @@
+{% load static %}
+{{ '<' }}{{ '!DOCTYPE html>' }}
+
+
+<html lang="en">
+<head>
+    <link type="text/css" href="{% static 'publication/css/styles.css' %}" rel="stylesheet" />
+    <meta charset="UTF-8">
+  {%block title%}  <title>Home</title> {%endblock title%}
+</head>
+<body>
+{% block up_panel%}
+    <div class="home_up_panel">
+
+        <div class="hello_friend">Hello Dear friend!</div>
+
+    <div class="home_main_panel">
+        <a href="{% url 'login'%}" class="text_main_panel">Login |</a>
+        <a href="{% url 'register'%}" class="text_main_panel">Register</a>
+    </div>
+
+    </div>
+{% endblock up_panel%}
+
+{% block phon %}
+    <img src="/media/home__no_auto_phon.png" class="phon_no_home">
+    <p  class="text_phon_no_home">Start sharing your thoughts with others!</p>
+{% endblock phon %}
+
+
+{% block content %}
+    {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endblock content %}
+</body>
+</html>

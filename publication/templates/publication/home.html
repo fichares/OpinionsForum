@@ -1,0 +1,171 @@
+{% load static %}
+{{ '<' }}{{ '!DOCTYPE html>' }}
+
+<html lang="en">
+{% block head %}
+<head>
+    <link type="text/css" href="{% static 'publication/css/styles.css' %}" rel="stylesheet" />
+    <script src="{% static 'publication/js/script.js' %}"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% endblock head %}
+
+<body style="overflow-x: hidden;" >
+
+<div class="up_panel_home">
+
+    <div class="push_home">
+     <a href="#">
+        <img src="/media/push_person.png" class="photo_person">
+       </a>
+    </div>
+
+
+    <a href="{% url 'find_message' %}">
+    <div class="container">
+      <input type="text" maxlength= "12" placeholder="Find message" class="searchbar">
+      <img src="https://images-na.ssl-images-amazon.com/images/I/41gYkruZM2L.png" alt="search icon" class="button">
+    </div>
+        </a>
+
+
+
+
+
+    <a href="{% url 'logout' %}" class="logout_home">logout </a>
+
+
+
+</div>
+
+
+
+
+
+
+
+    <div class="left_panel_home">
+
+       <a href="#" class="ref_photo_with_username">                               <!-- This ref profile -->
+        <div class="photo_with_username">
+        <img src="{{curent_user.photo.url}}" class="photo_user_in_home">
+        <p class="name_user_in_home">{{curent_user.username}} </p>
+
+        </div>
+       </a>
+
+
+        <a href="{% url 'my_notes' %}" class="ref_photo_with_username">                                <!-- This ref notes -->
+        <div class="notes_at_home">
+        <img src="/media/notes.png" class="photo_notes">
+
+        </div>
+       </a>
+
+
+        <a href="{% url 'my_active_chat' %}" class="ref_photo_with_username">                                <!-- This ref chats -->
+        <div class="chats_at_home">
+        <img src="/media/chat_home.png" class="photo_notes">
+
+        </div>
+       </a>
+
+
+        <a href="{% url 'my_file' %}" class="ref_photo_with_username">                                <!-- This ref my file -->
+        <div class="myfile_at_home">
+        <img src="/media/myfile_home.png" class="photo_notes">
+
+        </div>
+       </a>
+
+
+    </div>
+
+
+{% block content %}
+   <div class="name_base_chat"> General chat
+    {{tt}}</div>
+
+    <div class="block_chat_of_page" >
+
+        {% for e in message %}
+        <div class="view_message_in_block">
+            <div > <img src="{{e.users.photo.url}}" class="photo_user_message"></div>
+
+            <div class="name_and_time_in_message">
+                    <div class="view_users_in_message"> {{e.users}} </div>
+                    <div class="view_time_in_message"> {{e.time_send| escape}} </div>
+                </div>
+
+            <div class="view_mess_in_block"> {{e.text|linebreaks}}   </div>
+
+        </div>
+        {% endfor message %}
+        <div id="wrapper_Scrollbottom"></div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+          <script>
+            $('div.block_chat_of_page').animate({
+                   scrollTop: parseInt($('#wrapper_Scrollbottom').offset().top)
+                 }, 0.1);
+          </script>
+
+
+
+
+
+    </div>
+
+
+
+
+
+    <form method="post" class="enter_message_in_chat" id="message_to_database_general_chat">
+    {% csrf_token %}
+
+<div>{{ form.non_field_errors }}</div>
+{% for f in form %}
+<div class="pole_input_message">{{ f }}</div>
+<div class="form-error">{{ f.errors }}</div>
+{% endfor %}
+        </div>
+
+    <button type="submit"  class="submit_input_message" id="input_new_message_in_database">
+        <div>Send</div>
+    </button>
+</form>
+
+
+
+            {% block script %}
+<script>
+
+const chatSocket = new WebSocket('ws://localhost:8000/home/{{user.pk}}');
+
+
+window.onload = function(){
+
+    document.getElementById('input_new_message_in_database').onclick = function() {
+        console.log("button was clicked");
+        const e = document.getElementById('message_to_database_general_chat');
+        const message = e.value;
+         chatSocket.send(JSON.stringify({
+            'type': 'text_message',
+            'author': 'request.user',
+            'text': 'message'
+            }));
+
+    };
+};
+
+</script>
+{% endblock script %}
+
+
+
+{% endblock content %}
+
+
+</body>
+</html>
